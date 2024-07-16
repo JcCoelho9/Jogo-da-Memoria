@@ -1,0 +1,106 @@
+.App {
+  font-family: 'EB Garemond';
+  color: #cd7f32;
+  margin: 10px auto; 
+  max-width: 800px; 
+  padding: 10px; 
+  background:  #001334;
+  text-align: center;
+}
+
+button {
+  font-family: 'EB Garemond';
+  color: #BBBDC0;
+  background: none;
+  border: 3px solid #BBBDC0;
+  padding: 8px 16px; 
+  border-radius: 4px;
+  color: 001334;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+button:hover {
+  background-color: #cd7f32;
+  color: black;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); 
+  gap: 10px; 
+  justify-items: center; 
+}
+
+.card {
+  position: relative;
+  width: 200px; 
+  height: 200px; 
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 3px solid #BBBDC0;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.card .front {
+  transform: rotateY(90deg);
+  transition: all ease-in 0.2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.flipped .front {
+  transform: rotateY(0deg);
+  transition-delay: 0.2s;
+}
+
+.card .back {
+  transition: all ease-in 0.2s;
+  transition-delay: 0.2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.flipped .back {
+  transform: rotateY(90deg);
+  transition-delay: 0s;
+}
+
+@media (max-width: 768px) {
+  .App {
+    max-width: 600px;
+  }
+  
+  .card {
+    width: 100px; 
+    height: 100px;
+  }
+  
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr); 
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    max-width: 400px; 
+    padding: 0;
+  }
+  
+  .card {
+    width: 80px; 
+    height: 80px; 
+  }
+  
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
